@@ -1,11 +1,11 @@
-package www.noway.work.demo
+package www.noway.work.caricari
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class DemoApplication
+class CaricariApplication
 
 fun main(args: Array<String>) {
-	runApplication<DemoApplication>(*args)
+	runApplication<CaricariApplication>(*args)
 }

@@ -1,10 +1,10 @@
-package www.noway.work.demo
+package www.noway.work.caricari
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class DemoApplicationTests {
+class CaricariApplicationTests {
 
 	@Test
 	fun contextLoads() {
