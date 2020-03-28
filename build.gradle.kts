@@ -18,9 +18,18 @@ configurations {
 	}
 }
 
+//ext {
+//	postgresqlVersion = '42.1.4'
+//	springBootDomaVersion = '1.1.1'
+//	domaVersion = '2.19.0'
+//}
+
 repositories {
 	mavenCentral()
 }
+
+processResources.destinationDir = compileJava.destinationDir
+compileJava.dependsOn processResources
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
@@ -33,8 +42,21 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}
-}
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+	compile("org.springframework.boot:spring-boot-devtools")
 
+	// -------------------------------------------
+	// postgresql
+	// -------------------------------------------
+	//compile "org.postgresql:postgresql:${postgresqlVersion}"
+
+	// -------------------------------------------
+	// Doma2
+	// -------------------------------------------
+	//compile "org.seasar.doma.boot:doma-spring-boot-starter:${springBootDomaVersion}"
+	//compile "org.seasar.doma:doma:${domaVersion}"	
+}
+	   
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
