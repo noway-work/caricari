@@ -28,8 +28,8 @@ repositories {
 	mavenCentral()
 }
 
-processResources.destinationDir = compileJava.destinationDir
-compileJava.dependsOn processResources
+//processResources.destinationDir = compileJava.destinationDir
+//compileJava.dependsOn processResources
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
@@ -45,16 +45,17 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-thymeleaf")
 	compile("org.springframework.boot:spring-boot-devtools")
 
+	compile("org.springframework.boot:spring-boot-starter-data-jpa")
 	// -------------------------------------------
 	// postgresql
 	// -------------------------------------------
-	//compile "org.postgresql:postgresql:${postgresqlVersion}"
+	compile("org.postgresql:postgresql")
 
 	// -------------------------------------------
 	// Doma2
 	// -------------------------------------------
-	//compile "org.seasar.doma.boot:doma-spring-boot-starter:${springBootDomaVersion}"
-	//compile "org.seasar.doma:doma:${domaVersion}"	
+	//compile("org.seasar.doma.boot:doma-spring-boot-starter:${springBootDomaVersion}"
+	//compile("org.seasar.doma:doma:${domaVersion}"	
 }
 	   
 tasks.withType<Test> {

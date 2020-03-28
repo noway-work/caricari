@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link th:href="@{/css/app.css}" rel="stylesheet" />
+</head>
+<body>
+    <h1>DB Connection test using Kotlin</h1>
+    <ul th:unless="${tests.isEmpty()}">
+        <li th:each="test: ${tests}">
+            <span th:text="${test.test}"></span>
+        </li>
+    </ul>
+</body>
+</html>
